@@ -47,6 +47,22 @@
         </p>
     </div>
     <div>
+        <h2>产品信息</h2>
+        <!-- preprocessing -->
+        <h3 th:text="${'Type: ' + __${T(pl.codeleak.demos.sbt.model.Product).TYPE}__}" text="Type">Type</h3>
+        <!-- Set parent object-->
+        <dl th:object="${product}">
+            <dt>产品名称:</dt>
+            <dd th:text="*{description}">葡萄干</dd>
+
+            <dt>产品价格:</dt>
+            <dd th:text="${'￥' + #numbers.formatDecimal(product.price, 1, 2)}">350</dd>
+
+            <dt>产品有效时间:</dt>
+            <dd th:text="${#dates.format(product.availableFrom, 'yyyy-MM-dd')}">28-Jun-2018</dd>
+        </dl>
+    </div>
+    <div>
         <h1>Spring Actuator</h1>
         <p>
             Actuator endpoints allow you to monitor and interact with your application.

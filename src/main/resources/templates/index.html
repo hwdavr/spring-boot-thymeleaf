@@ -47,6 +47,12 @@
         </p>
     </div>
     <div>
+        <h2>Hello World</h2>
+        <!-- Messages for international-->
+        <p th:text="'Title: ' + #{title}">User</p>
+        <p th:text="'Message: ' + #{message}">message</p>
+    </div>
+    <div>
         <h2>产品信息</h2>
         <!-- preprocessing -->
         <h3 th:text="${'Type: ' + __${T(pl.codeleak.demos.sbt.model.Product).TYPE}__}" text="Type">Type</h3>
